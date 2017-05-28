@@ -421,36 +421,36 @@ func (re *Regexp) doMatch(r io.RuneReader, b []byte, s string) bool {
 func (re *Regexp) doExecute(r io.RuneReader, b []byte, s string, pos int, ncap int, dstCap []int) []int {
 	m := re.get()
 	var i input
-	var size int
+	// var size int
 	if r != nil {
 		i = m.newInputReader(r)
 	} else if b != nil {
 		i = m.newInputBytes(b)
-		size = len(b)
+		// size = len(b)
 	} else {
 		i = m.newInputString(s)
-		size = len(s)
+		// size = len(s)
 	}
-	if m.op != notOnePass {
-		if !m.onepass(i, pos, ncap) {
-			re.put(m)
-			return nil
-		}
-	} else if size < m.maxBitStateLen && r == nil {
-		if m.b == nil {
-			m.b = newBitState(m.p)
-		}
-		if !m.backtrack(i, pos, size, ncap) {
-			re.put(m)
-			return nil
-		}
-	} else {
-		m.init(ncap)
-		if !m.match(i, pos) {
-			re.put(m)
-			return nil
-		}
+	// if m.op != notOnePass {
+	// 	if !m.onepass(i, pos, ncap) {
+	// 		re.put(m)
+	// 		return nil
+	// 	}
+	// } else if size < m.maxBitStateLen && r == nil {
+	// 	if m.b == nil {
+	// 		m.b = newBitState(m.p)
+	// 	}
+	// 	if !m.backtrack(i, pos, size, ncap) {
+	// 		re.put(m)
+	// 		return nil
+	// 	}
+	// } else {
+	m.init(ncap)
+	if !m.match(i, pos) {
+		re.put(m)
+		return nil
 	}
+	// }
 	dstCap = append(dstCap, m.matchcap...)
 	if dstCap == nil {
 		// Keep the promise of returning non-nil value on match.
