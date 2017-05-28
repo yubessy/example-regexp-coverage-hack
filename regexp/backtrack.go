@@ -14,7 +14,7 @@
 
 package regexp
 
-import "regexp/syntax"
+import "github.com/yubessy/golang-regexp-customize/regexp/syntax"
 
 // A job is an entry on the backtracker's job stack. It holds
 // the instruction pc and the position in the input.

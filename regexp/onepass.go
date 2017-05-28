@@ -6,9 +6,10 @@ package regexp
 
 import (
 	"bytes"
-	"regexp/syntax"
 	"sort"
 	"unicode"
+
+	"github.com/yubessy/golang-regexp-customize/regexp/syntax"
 )
 
 // "One-pass" regexp execution.

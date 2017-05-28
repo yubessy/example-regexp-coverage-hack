@@ -114,6 +114,7 @@ type Inst struct {
 	Out  uint32 // all but InstMatch, InstFail
 	Arg  uint32 // InstAlt, InstAltMatch, InstCapture, InstEmptyWidth
 	Rune []rune
+	Flag bool
 }
 
 func (p *Prog) String() string {

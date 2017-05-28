@@ -6,7 +6,8 @@ package regexp
 
 import (
 	"io"
-	"regexp/syntax"
+
+	"github.com/yubessy/golang-regexp-customize/regexp/syntax"
 )
 
 // A queue is a 'sparse array' holding pending threads of execution.
@@ -239,6 +240,7 @@ func (m *machine) step(runq, nextq *queue, pos, nextPos int, c rune, nextCond sy
 			add = c != '\n'
 		}
 		if add {
+			i.Flag = true
 			t = m.add(nextq, i.Out, nextPos, t.cap, nextCond, t)
 		}
 		if t != nil {
