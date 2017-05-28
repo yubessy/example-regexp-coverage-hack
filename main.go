@@ -10,6 +10,8 @@ import (
 func main() {
 	re := regexp.MustCompile(`.+\.(co|ne)\.jp`)
 	fmt.Printf("%q\n", re.FindString("hoge.co.jp"))
-	fmt.Printf("%q\n", re.FindString("fuga.ne.jp"))
+	// fmt.Printf("%q\n", re.FindString("fuga.ne.jp"))
 	pp.Println(re.Inst())
+	c, a := re.Coverrage()
+	fmt.Printf("%d / %d", c, a)
 }
