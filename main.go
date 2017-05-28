@@ -8,8 +8,8 @@ import (
 )
 
 func main() {
-	re := regexp.MustCompile(`.+@.+\.(com|jp)`)
-	fmt.Printf("%q\n", re.FindString("seafood"))
-	fmt.Printf("%q\n", re.FindString("meat"))
+	re := regexp.MustCompile(`.+\.(co|ne)\.jp`)
+	fmt.Printf("%q\n", re.FindString("hoge.co.jp"))
+	fmt.Printf("%q\n", re.FindString("fuga.ne.jp"))
 	pp.Println(re.Inst())
 }
