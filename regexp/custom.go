@@ -30,7 +30,7 @@ func (re *Regexp) Inst() []InstPp {
 	return r
 }
 
-func (re *Regexp) Coverrage() (int, int) {
+func (re *Regexp) Coverage() (int, int) {
 	c := 0
 	a := 0
 	for _, x := range re.prog.Inst {
