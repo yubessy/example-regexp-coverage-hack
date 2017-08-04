@@ -1,1 +1,1 @@
-# golang-regexp-customize
+# regexp-coverage-hack
