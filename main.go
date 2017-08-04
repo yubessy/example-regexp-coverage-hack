@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/yubessy/golang-regexp-customize/regexp"
+	"github.com/yubessy/regexp-coverage-hack/regexp"
 )
 
 func main() {
